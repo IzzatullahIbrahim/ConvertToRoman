@@ -4,10 +4,27 @@
         <title>Factorial</title>
     </head>
     <body>
-        Convert to roman numeral in console.log with convertToRoman(number);
+        <h1>
+            Convert to roman numeral in console.log with convertToRoman(number);
+        </h1>
+
 
         <script>
-            
+            function convertToRoman(num) {
+                var integer = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+                var roman = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+
+                var result = "";
+
+                for (var i = 0; i < integer.length; i++) {
+                    while (integer[i] <= num) {
+                        result += roman[i];
+                        num -= integer[i];
+                    }
+                }
+                
+                return result;
+             }
         </script>
     </body>
 </html>
